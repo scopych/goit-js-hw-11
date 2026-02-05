@@ -10,6 +10,5 @@ const searchParams = new URLSearchParams({
 });
 
 export function getImagesByQuery(query) {
-	// console.log(query);
 	return axios.get(`/?${searchParams}&q=${query}`);
 }
