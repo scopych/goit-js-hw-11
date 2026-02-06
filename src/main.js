@@ -32,10 +32,10 @@ function handleSubmit(event) {
 			} else {
 				createGallery(resp.data.hits);
 				// 3. Create a list of promises (one for each image)
-			      // const imagePromises = imgs.map(img => waitForImage(img));
+			      const imagePromises = resp.data.hits.map(obj => waitForImage(obj.webformatURL));
 			
 			      // 4. Return this promise so the chain stays open
-			      // return Promise.all(imagePromises);
+			      return Promise.all(imagePromises);
 			}
 
 		})
